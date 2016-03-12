@@ -1,0 +1,11 @@
+db.tweets.find( { delete: { $exists: true } } ).count()
+
+db.tweets.find( { in_reply_to_status_id: { $ne:null } } ).count()
+
+
+db.tweets.aggregate([
+	{ $match: { delete: { $exists: false } } } ,
+	{ $group: { _id: "$user.id", num: { $sum: 1 } } },
+	{ $sort: { num: -1, _id: 1 } },
+	{ $limit: 5 }
+	])
