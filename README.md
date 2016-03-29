@@ -1,4 +1,4 @@
-# Protocol Buffers, SQL, MongoDB Comparison in Twitter data
+# Comparing Protocol Buffers, SQL, MongoDB in Twitter data
 
 The goal is to experiment with working with data in various degrees of structure.  
 
